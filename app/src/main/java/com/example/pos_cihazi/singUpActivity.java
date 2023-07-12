@@ -51,7 +51,7 @@ public class singUpActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()){
                                 Toast.makeText(singUpActivity.this,"başarılı",Toast.LENGTH_SHORT).show();
-                                startActivities(new Intent(singUpActivity.this,loginActivity.class));
+                                startActivities(new Intent[]{new Intent(singUpActivity.this,loginActivity.class)});
                             }
                             else {
                                 Toast.makeText(singUpActivity.this,"signup Failed"+task.getException().getMessage(),Toast.LENGTH_SHORT).show();
@@ -64,7 +64,7 @@ public class singUpActivity extends AppCompatActivity {
         loginRedirectText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivities(new Intent(singUpActivity.this,loginActivity.class));
+                startActivities(new Intent[]{new Intent(singUpActivity.this,loginActivity.class)});
             }
         });
     }
